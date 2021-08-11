@@ -1,7 +1,7 @@
 const helmet = require('helmet');
 const compression = require('compression');
 require('dotenv').config();
-const https = require('https');
+const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
@@ -16,8 +16,8 @@ const User = require('./models/user');
 const errorHandler = require('./controllers/error');
 const app = express();
 
-const privateKey = fs.readFileSync('server.key');
-const certificate = fs.readFileSync('server.cert');
+// const privateKey = fs.readFileSync('server.key');
+// const certificate = fs.readFileSync('server.cert');
 
 app.use(
     helmet.contentSecurityPolicy({
